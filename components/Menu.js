@@ -3,7 +3,7 @@ import style from '../styles/Menu.module.css'
 import { urlFor } from '../lib/client';
 import Link from 'next/link';
 
-export default ({ pizzas }) => {
+const Menu = ({ pizzas }) => {
     return (
         <div className={style.container}>
             <div className={style.heading}>
@@ -48,3 +48,4 @@ export default ({ pizzas }) => {
 // check image return in map
 // we need to use urlFor
 // the simple src={pizza.image} will not work
+export default Menu;

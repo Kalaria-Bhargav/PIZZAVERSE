@@ -5,7 +5,7 @@ import HeroImage from '../assets/HeroImage.png'
 import {UilPhone} from '@iconscout/react-unicons'
 import Pizza1 from '../assets/p1.jpg';
 
-export default () => {
+ const Hero = () => {
     return (
         <div className={style.container}>
             {/* left Side */}
@@ -53,3 +53,5 @@ export default () => {
         </div>
     )
 }
+
+export default Hero;

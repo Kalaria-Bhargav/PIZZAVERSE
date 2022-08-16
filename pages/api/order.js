@@ -1,5 +1,5 @@
 import { client } from '../../lib/client'
-export default async (req, res) => {
+const order = async (req, res) => {
     switch (req.method) {
         case 'POST':
             const newOrder = await JSON.parse(req.body);
@@ -23,3 +23,4 @@ export default async (req, res) => {
             break;
     }
 }
+export default order;

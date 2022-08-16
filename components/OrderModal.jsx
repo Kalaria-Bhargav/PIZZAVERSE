@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useStore } from "../store/store";
 import { useRouter } from 'next/router';
 
-export default ({ opened, setOpened, PaymentMethod }) => {
+const OrderModal =  ({ opened, setOpened, PaymentMethod }) => {
     console.log(PaymentMethod);
     const theme = useMantineTheme();
     const [formData, setFormData] = useState({})
@@ -54,3 +54,5 @@ export default ({ opened, setOpened, PaymentMethod }) => {
         </Modal>
     )
 }
+
+export default OrderModal;
