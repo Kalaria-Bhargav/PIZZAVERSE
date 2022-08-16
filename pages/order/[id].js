@@ -2,7 +2,7 @@ import { client } from '../../lib/client';
 import Layout from '../../components/Layout';
 import style from '../../styles/Order.module.css'
 import Cooking from '../../assets/cooking.png';
-import Onway from '../../assets/Onway.png'
+import Onway from '../../assets/onway.png'
 import {UilBill, UilBox} from '@iconscout/react-unicons';
 import Image from 'next/image';
 import Spinner from '../../assets/spinner.svg'
