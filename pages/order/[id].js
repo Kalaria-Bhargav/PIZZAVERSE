@@ -8,13 +8,14 @@ import Image from 'next/image';
 import Spinner from '../../assets/spinner.svg'
 import { useEffect } from 'react';
 
+
 export const getServerSideProps = async ({ params }) => {
     const query = `*[_type == 'order' && _id == '${params.id}']`
     const order = await client.fetch(query);
     // it returns array of document but we have only one document
     // which have id equal to id and for access it we have to
     // use the first element of the array
-
+    
     return {
         props: {
             order: order[0]

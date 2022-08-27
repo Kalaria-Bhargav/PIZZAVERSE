@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import style from '../styles/Header.module.css';
 import Image from 'next/image';
-import Logo from '../assets/Logo.png';
-import { UilShoppingBag, UilReceipt } from '@iconscout/react-unicons'
+import Logo from '../assets/Logo1.png';
+import { UilShoppingBag, UilReceipt } from '@iconscout/react-unicons';
 import { useStore } from '../store/store';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -38,7 +38,7 @@ const Header = () => {
         <div className={style.header}>
             {/* logo side */}
             <div className={style.logo}>
-                <Image src={Logo} alt="" width={50} height={50} />
+                <Image src={Logo} style={{borderRadius:'5px'}} alt="" width={50} height={50} />
                 <span>PIZZAVERSE</span>
             </div>
 
@@ -74,7 +74,7 @@ const Header = () => {
                             <UilReceipt size={35} color='#2E2E2E' />
                             {Order != "" &&
                                 <div className={style.badge}>
-                                    1
+                                    {Order.length > 0 ? 1 : 0}
                                 </div>}
 
                         </div>

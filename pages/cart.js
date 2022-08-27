@@ -1,16 +1,26 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, {Toaster} from "react-hot-toast";
 import Layout from "../components/Layout"
 import { urlFor } from "../lib/client";
 import { useStore } from "../store/store";
 import style from '../styles/Cart.module.css';
 import OrderModal from "../components/OrderModal";
+
+
 export default function Cart() {
     const cartData = useStore((state) => state.cart);
     const removePizza = useStore((state) => state.removePizza);
     const [paymentMethod, setPaymentMethod] = useState(null)
     
+
+    const [Order, setOrder] = useState("")
+    
+    useEffect(() => {
+        setOrder(localStorage.getItem('order'))
+
+    }, [])
+
     const handleOnDelivery = () =>{
         setPaymentMethod(0);
         // localStorage.setItem('total', total());
@@ -115,7 +125,7 @@ export default function Cart() {
                     </div>
 
                     <div className={style.buttons}>
-                        <button className='btn' onClick={handleOnDelivery}>Pay on Delivery</button>
+                        {cartData.pizzas.length? <button className='btn' onClick={handleOnDelivery}>Pay on Delivery</button> : ""}
                         {/* <button className={`btn ${style.newBtn}`} disabled>Pay Now</button> */}
                     </div>
                 </div>
@@ -124,9 +134,9 @@ export default function Cart() {
             {/* Creating pay on delivery info page */}
             
             <OrderModal
-            opened={paymentMethod === 0} 
+            opened={paymentMethod == 0} 
             setOpened= {setPaymentMethod}
-            PaymentMethod = {paymentMethod}
+            PaymentMethodop = {paymentMethod}
             />
 
         </Layout>

@@ -6,8 +6,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { useStore } from "../store/store";
 import { useRouter } from 'next/router';
 
-const OrderModal =  ({ opened, setOpened, PaymentMethod }) => {
-    console.log(PaymentMethod);
+const OrderModal =  ({ opened, setOpened, PaymentMethodop }) => {
+    // console.log(PaymentMethod);
     const theme = useMantineTheme();
     const [formData, setFormData] = useState({})
     const router = useRouter();
@@ -19,6 +19,7 @@ const OrderModal =  ({ opened, setOpened, PaymentMethod }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        let PaymentMethod = 0;
         const id = await createOrder({ ...formData, total, PaymentMethod });
 
         toast.success('Order Placed');
@@ -48,7 +49,7 @@ const OrderModal =  ({ opened, setOpened, PaymentMethod }) => {
                     You will pay <span>₹ {total}</span> on delivery
                 </span>
 
-                <button type="submit" className="btn">Place Order</button>
+                <button type="submit" className="btn" onClick={() => setOpened(null)}>Place Order</button>
             </form>
             <Toaster />
         </Modal>

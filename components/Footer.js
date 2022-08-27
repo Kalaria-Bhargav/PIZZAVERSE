@@ -13,7 +13,7 @@ const Footer = () => {
                 <UilInstagram size={45}/>
             </div>
             <div className={style.logo}>
-            <Image src={Logo} alt="" width={50} height={50}/>
+            <Image src={Logo} style={{borderRadius:'5px'}} alt="" width={40} height={40}/>
             <span>PIZZAVERSE</span>
         </div> 
         </div>
