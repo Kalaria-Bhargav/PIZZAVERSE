@@ -79,7 +79,7 @@ Any contributions you make are **Highly appreciated**.
 
 ## Live Project
 
-[Link](https://pizzaverse-acfz4pl10-xxmagnetoxx.vercel.app)
+You can check out the Live Project using this [Link](https://pizzaverse-acfz4pl10-xxmagnetoxx.vercel.app).
 
 
 
